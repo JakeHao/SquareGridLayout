@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * 每个item的宽度一样，但是高度由自控件决定
+ * 每个item的宽度一样，但是高度由控件决定
  */
 public class SquareGridLayout2 extends ViewGroup
 {
@@ -70,7 +70,7 @@ public class SquareGridLayout2 extends ViewGroup
             if (child.getVisibility() == GONE) { continue; }
             LayoutParams lp = (LayoutParams)child.getLayoutParams();
             measureChild(child, childSpec, childSpec);
-            if (currentWidth + child.getMeasuredWidth() + mSpacing > widthSize)
+            if (currentWidth + squareWidth + mSpacing > widthSize)
             {
                 height += currentHeight;
                 currentHeight = 0;
@@ -82,7 +82,7 @@ public class SquareGridLayout2 extends ViewGroup
             Log.d("squaregrid", "[" + i + "] current Height: " + currentHeight + " height: " + height);
             Log.d("squaregrid", "[" + i + "] x:" + lp.x + " y:" + lp.y);
             currentWidth += squareWidth + mSpacing;
-            currentHeight = squareWidth + mSpacing;
+            currentHeight = child.getMeasuredHeight() + mSpacing;
         }
         height += currentHeight + mSpacing;
         width = Math.max(width, currentWidth - mSpacing);
@@ -100,7 +100,7 @@ public class SquareGridLayout2 extends ViewGroup
         {
             final View child = getChildAt(i);
             LayoutParams lp = (LayoutParams)child.getLayoutParams();
-            child.layout(lp.x, lp.y, lp.x + squareWidth, lp.y + squareWidth);
+            child.layout(lp.x, lp.y, lp.x + squareWidth, lp.y + child.getMeasuredHeight());
         }
     }
 

@@ -10,7 +10,7 @@
         android:id="@+id/grid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:numColumns="3"
+        app:numColumns="4"
         app:spacing="10dp"
         android:animateLayoutChanges="true"
         tools:context=".MainActivity">

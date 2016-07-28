@@ -5,7 +5,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-    <com.jake.squaregridlayoutdemo.SquareGridLayout
+    <com.jake.squaregridlayoutdemo.SquareGridLayout3
         android:background="@android:color/darker_gray"
         android:id="@+id/grid"
         android:layout_width="match_parent"
@@ -27,6 +27,24 @@
                 android:padding="10dp"
                 android:layout_gravity="center"
                 android:text="A"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF00FF"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:text="A"/>
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -53,34 +71,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:layout_gravity="center"
                 android:text="A"/>
-
-
         </LinearLayout>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#00FF00"/>
-
-
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#00FF00"/>
-
-
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#FF00FF"/>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#0000FF"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -92,8 +85,38 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:layout_gravity="center"
                 android:text="A"/>
         </LinearLayout>
-    </com.jake.squaregridlayoutdemo.SquareGridLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF00FF"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:text="A"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF00FF"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:text="A"/>
+        </LinearLayout>
+
+    </com.jake.squaregridlayoutdemo.SquareGridLayout3>
 
 </ScrollView>

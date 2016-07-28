@@ -20,7 +20,7 @@ public class MainActivity extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_1);
+        setContentView(R.layout.activity_main_3);
 //        grid = (SquareGridLayout)findViewById(R.id.grid);
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
 //        {

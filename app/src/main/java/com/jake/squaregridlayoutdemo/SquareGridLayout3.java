@@ -8,16 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * item的间隔 不包含边缘部分
- * 每个item的宽高一样
+ * 每个item的宽度一样，但是高度由控件决定
  */
-public class SquareGridLayout1 extends ViewGroup
+public class SquareGridLayout3 extends ViewGroup
 {
     private int mSpacing = 0;
     private int mColumns = 2;
     int squareWidth;
 
-    public SquareGridLayout1(Context context, AttributeSet attrs)
+    public SquareGridLayout3(Context context, AttributeSet attrs)
     {
         super(context, attrs);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SquareGridLayout);
@@ -32,7 +31,7 @@ public class SquareGridLayout1 extends ViewGroup
         }
     }
 
-    public SquareGridLayout1(Context context)
+    public SquareGridLayout3(Context context)
     {
         super(context);
     }
@@ -65,27 +64,29 @@ public class SquareGridLayout1 extends ViewGroup
         int currentWidth = getPaddingLeft();
         int currentHeight = 0;
         final int count = getChildCount();
+        int childHeight=0;
         for (int i = 0; i < count; i++)
         {
             final View child = getChildAt(i);
             if (child.getVisibility() == GONE) { continue; }
             LayoutParams lp = (LayoutParams)child.getLayoutParams();
             measureChild(child, childSpec, childSpec);
-            if (currentWidth + squareWidth > widthSize)
+            if (currentWidth + child.getMeasuredWidth() > widthSize)
             {
                 height += currentHeight;
                 currentHeight = 0;
                 width = Math.max(width, currentWidth);
                 currentWidth = getPaddingLeft();
             }
-            lp.x = currentWidth;
-            lp.y = height;
+            lp.x = currentWidth ;
+            lp.y = height ;
             Log.d("squaregrid", "[" + i + "] current Height: " + currentHeight + " height: " + height);
             Log.d("squaregrid", "[" + i + "] x:" + lp.x + " y:" + lp.y);
             currentWidth += squareWidth + mSpacing;
-            currentHeight = squareWidth + mSpacing;
+            currentHeight = child.getMeasuredHeight() + mSpacing;
+            childHeight = child.getMeasuredHeight();
         }
-        height += squareWidth;
+        height += childHeight;
         width = Math.max(width, currentWidth - mSpacing);
         width += getPaddingRight();
         height += getPaddingBottom();
@@ -101,7 +102,7 @@ public class SquareGridLayout1 extends ViewGroup
         {
             final View child = getChildAt(i);
             LayoutParams lp = (LayoutParams)child.getLayoutParams();
-            child.layout(lp.x, lp.y, lp.x + squareWidth, lp.y + squareWidth);
+            child.layout(lp.x, lp.y, lp.x + squareWidth, lp.y + child.getMeasuredHeight());
         }
     }
 
