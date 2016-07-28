@@ -8,16 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * item的间隔包含边缘部分
- * 每个item的宽高一样
+ * 每个item的宽度一样，但是高度由自控件决定
  */
-public class SquareGridLayout extends ViewGroup
+public class SquareGridLayout2 extends ViewGroup
 {
     private int mSpacing = 0;
     private int mColumns = 2;
     int squareWidth;
 
-    public SquareGridLayout(Context context, AttributeSet attrs)
+    public SquareGridLayout2(Context context, AttributeSet attrs)
     {
         super(context, attrs);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SquareGridLayout);
@@ -32,7 +31,7 @@ public class SquareGridLayout extends ViewGroup
         }
     }
 
-    public SquareGridLayout(Context context)
+    public SquareGridLayout2(Context context)
     {
         super(context);
     }
@@ -71,7 +70,7 @@ public class SquareGridLayout extends ViewGroup
             if (child.getVisibility() == GONE) { continue; }
             LayoutParams lp = (LayoutParams)child.getLayoutParams();
             measureChild(child, childSpec, childSpec);
-            if (currentWidth + squareWidth + mSpacing > widthSize)
+            if (currentWidth + child.getMeasuredWidth() + mSpacing > widthSize)
             {
                 height += currentHeight;
                 currentHeight = 0;

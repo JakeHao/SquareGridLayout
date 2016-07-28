@@ -5,7 +5,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-    <com.jake.squaregridlayoutdemo.SquareGridLayout
+    <com.jake.squaregridlayoutdemo.SquareGridLayout1
         android:background="@android:color/darker_gray"
         android:id="@+id/grid"
         android:layout_width="match_parent"
@@ -14,6 +14,11 @@
         app:spacing="10dp"
         android:animateLayoutChanges="true"
         tools:context=".MainActivity">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FF00"/>
 
         <View
             android:layout_width="wrap_content"
@@ -34,13 +39,6 @@
 
 
         </LinearLayout>
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#00FF00"/>
-
-
 
         <View
             android:layout_width="wrap_content"
@@ -85,6 +83,6 @@
                 android:padding="10dp"
                 android:text="A"/>
         </LinearLayout>
-    </com.jake.squaregridlayoutdemo.SquareGridLayout>
+    </com.jake.squaregridlayoutdemo.SquareGridLayout1>
 
 </ScrollView>

@@ -1,10 +1,8 @@
 package com.jake.squaregridlayoutdemo;
 
-import android.animation.LayoutTransition;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,12 +20,12 @@ public class MainActivity extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        grid = (SquareGridLayout)findViewById(R.id.grid);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
-        {
-            grid.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
-        }
+        setContentView(R.layout.activity_main_1);
+//        grid = (SquareGridLayout)findViewById(R.id.grid);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
+//        {
+//            grid.getLayoutTransition().enableTransitionType(LayoutTransition.CHANGING);
+//        }
     }
 
     @Override
